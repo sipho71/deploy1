@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | BrightSpark Electrical Services</title>
+    <meta name="description" content="Submit a service enquiry to BrightSpark Electrical Services. Get a quote for electrical installations, repairs, and maintenance in Cape Town.">
+    <meta name="keywords" content="electrical enquiry, get a quote, electrician Cape Town, BrightSpark enquiry">
+    <link rel="stylesheet" href="../CSS/style.css"> 
+</head>
+<body>
+    <header>
+        <h1>BrightSpark Electrical Services</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header> 
+
+    <main>
+        <section>
+            <h2>Service Enquiry Form</h2>
+            <p>Please fill out the form below, and a member of our team will contact you shortly.</p>
+        </section>
+
+        <section>
+            <div id="enquiry-response" style="display: none;"></div>
+
+            <form id="enquiryForm" action="https://formspree.io/f/mjgqwoyd" method="POST" novalidate>
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="fname">Full Name:</label><br>
+                    <input type="text" id="fname" name="name" placeholder="Enter your name"><br>
+                    <span id="fname-error" class="error-message"></span><br>
+
+                    <label for="u-email">Email Address:</label><br>
+                    <input type="email" id="u-email" name="email" placeholder="example@email.com"><br>
+                    <span id="email-error" class="error-message"></span><br>
+
+                    <label for="u-phone">Phone Number:</label><br>
+                    <input type="tel" id="u-phone" name="phone" placeholder="012 345 6789"><br>
+                    <span id="phone-error" class="error-message"></span><br>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Work Requirements</legend>
+                    <p>What type of property is this for?</p>
+                    <input type="radio" id="res" name="property-type" value="Residential">
+                    <label for="res">Home (Residential)</label><br>
+                    <input type="radio" id="comm" name="property-type" value="Commercial">
+                    <label for="comm">Small Business (Commercial)</label><br>
+                    <span id="prop-error" class="error-message"></span><br>
+
+                    <label for="service-list">Required Service:</label><br>
+                    <select id="service-list" name="service">
+                        <option value="">-- Select a Service --</option>
+                        <option value="Electrical Installation">Electrical Installation</option>
+                        <option value="Electrical Repair">Electrical Repair</option>
+                        <option value="Electrical Maintenance">Electrical Maintenance</option>
+                    </select><br>
+                    <span id="service-error" class="error-message"></span><br>
+
+                    <label for="urgency">How urgent is this?</label><br>
+                    <input type="range" id="urgency" name="urgency" min="1" max="5" value="3">
+                    <span id="urgency-val">(3 = Medium)</span><br><br>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <label for="details">Describe the issue or project:</label><br>
+                    <textarea id="details" name="details" rows="5" cols="40" placeholder="Tell us more about what you need..."></textarea><br>
+                    <span id="details-error" class="error-message"></span><br>
+
+                    <label for="pref-date">Preferred Date for Visit:</label><br>
+                    <input type="date" id="pref-date" name="preferred-date"><br>
+                    <span id="date-error" class="error-message"></span><br>
+                </fieldset>
+
+                <br>
+                <button type="submit">Send Enquiry</button>
+                <button type="reset" id="enquiryReset">Clear Form</button>
+            </form>
+        </section>
+    </main> 
+
+    <footer>
+        <p>&copy; 2026 BrightSpark Electrical Services</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

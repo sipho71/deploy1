@@ -1,0 +1,733 @@
+
+ /* ==========================================================================
+1. VARIABLES & ACADEMIC 
+========================================================================== */
+:root {
+/* Color Scheme Tokens from BrightSpark Logo */
+--dark-blue: #0a1c3a;
+--electric-blue: #00a2e8;
+--bright-yellow: #ffc800;
+--light-bg: #f4f7f6;
+--white: #ffffff;
+--text-color: #333333;
+--text-muted: #555555;
+
+/* Animation Transitions */
+--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Academic Reset covering all elements and browser defaults */
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+font-size: 100%; /* 16px standard browser baseline */
+scroll-behavior: smooth;
+-webkit-text-size-adjust: 100%;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6; 
+color: var(--text-color);
+background-color: var(--light-bg);
+}
+
+/* ==========================================================================
+2. HEADER & STRUCTURAL NAVIGATION 
+========================================================================== */
+header {
+background-color: var(--dark-blue);
+color: var(--white);
+padding: 2rem 1.5rem;
+text-align: center;
+border-bottom: 5px solid var(--electric-blue);
+}
+
+header h1 {
+font-weight: 700;
+color: var(--white);
+text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+margin-bottom: 1.2rem;
+}
+
+/* Layout technique: Flexbox configuration */
+nav {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1.5rem;
+flex-wrap: wrap;
+}
+
+nav a {
+color: var(--white);
+text-decoration: none;
+font-weight: 600;
+font-size: 1.05rem;
+padding: 0.5rem 1.25rem;
+border-radius: 4px;
+border: 1px solid transparent;
+transition: var(--transition);
+}
+
+/*  Interactive Pseudo-classes (Nav Elements) */
+nav a:hover {
+background-color: var(--electric-blue);
+color: var(--dark-blue);
+}
+
+nav a:focus {
+outline: none;
+border-color: var(--bright-yellow);
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a:active {
+transform: scale(0.95); /* Visual interactive press feedback */
+}
+
+/* ==========================================================================
+3. TYPOGRAPHY SCALE & MAIN SECTIONS
+========================================================================== */
+main {
+max-width: 1000px;
+margin: 3rem auto;
+padding: 0 1.5rem; /* Flexible boundary container spacing */
+}
+
+section {
+background: var(--white);
+padding: 2.5rem;
+margin-bottom: 2.5rem;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+border-left: 6px solid var(--dark-blue);
+}
+
+/* Harmoneous Typographic Scale using relative units*/
+h1 {
+font-size: 2.4rem;
+letter-spacing: -0.03em;
+}
+
+h2, h3 {
+color: var(--dark-blue);
+font-weight: 700;
+line-height: 1.3;
+letter-spacing: -0.02em;
+margin-bottom: 1.2rem;
+}
+
+h2 {
+font-size: 1.95rem;
+border-bottom: 2px solid #e2e8f0;
+padding-bottom: 0.6rem;
+}
+
+h3 {
+font-size: 1.45rem;
+}
+
+p {
+margin-bottom: 1.25rem;
+font-size: 1.05rem;
+color: var(--text-color);
+}
+
+/* List Formatting */
+ul {
+list-style-position: inside;
+margin-bottom: 1.5rem;
+}
+
+ul li {
+padding: 0.4rem 0;
+font-size: 1.05rem;
+}
+
+ul li::marker {
+color: var(--electric-blue);
+}
+
+/* Decorative Divider Rule */
+hr {
+border: 0;
+height: 1px;
+background: linear-gradient(to right, #cbd5e1, transparent);
+margin: 2.5rem 0;
+}
+
+/* ==========================================================================
+4. RESPONSIBLE IMAGE FRAMEWORK 
+========================================================================== */
+main img {
+max-width: 100%; /* Ensures dynamic responsiveness across devices */
+height: auto;
+border-radius: 6px;
+margin-bottom: 1.5rem;
+display: block;
+border: 2px solid #e2e8f0;
+}
+
+/* Specific centering balance for your index branding banner */
+img[alt*="logo"] {
+display: block;
+margin: 0 auto 2.5rem auto;
+max-width: 100%;
+height: auto;
+border: none;
+}
+
+.logo-large {
+    width: 400px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* ==========================================================================
+5. DECORATIVE CALLS-TO-ACTION & LINK INTERACTION 
+========================================================================== */
+a {
+color: var(--electric-blue);
+transition: var(--transition);
+}
+
+a:hover {
+color: var(--dark-blue);
+}
+
+/* Primary Action Target Controls */
+button, .btn-link {
+background-color: var(--bright-yellow);
+color: var(--dark-blue);
+border: none;
+padding: 0.85rem 2rem;
+font-size: 1rem;
+font-weight: 700;
+border-radius: 4px;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+transition: var(--transition);
+display: inline-block;
+}
+
+/* Interactive pseudo states */
+button:hover {
+background-color: var(--dark-blue);
+color: var(--bright-yellow);
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:focus {
+outline: 3px solid var(--electric-blue);
+outline-offset: 2px;
+}
+
+button:active {
+transform: translateY(0);
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button[type="reset"] {
+background-color: #cbd5e1;
+color: #475569;
+margin-left: 0.5rem;
+}
+
+button[type="reset"]:hover {
+background-color: #94a3b8;
+color: #0f172a;
+}
+
+/* Static Inline-Block Link Upgrade Wrapper */
+strong a {
+text-decoration: none;
+background-color: var(--bright-yellow);
+color: var(--dark-blue);
+padding: 0.75rem 1.5rem;
+border-radius: 4px;
+display: inline-block;
+transition: var(--transition);
+}
+
+strong a:hover {
+background-color: var(--dark-blue);
+color: var(--bright-yellow);
+}
+
+/* ==========================================================================
+6. ENQUIRY FORM PROCESSING BLOCK 
+========================================================================== */
+fieldset {
+border: 1px solid #cbd5e1;
+border-radius: 6px;
+padding: 1.75rem;
+margin-bottom: 2rem;
+background-color: #f8fafc;
+}
+
+legend {
+font-weight: 700;
+color: var(--dark-blue);
+padding: 0 0.75rem;
+font-size: 1.15rem;
+}
+
+label {
+font-weight: 600;
+display: inline-block;
+margin-bottom: 0.4rem;
+color: #334155;
+}
+
+/* Input Fields Processing Rules */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+width: 100%;
+max-width: 550px; /* Constrains inputs cleanly on massive viewports */
+padding: 0.75rem;
+border: 1px solid #cbd5e1;
+border-radius: 4px;
+font-family: inherit;
+font-size: 1rem;
+margin-bottom: 0.5rem;
+transition: var(--transition);
+background-color: var(--white);
+}
+
+/* Focus interactive elements for form fields */
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: var(--electric-blue);
+box-shadow: 0 0 0 3px rgba(0, 162, 232, 0.25);
+}
+
+input[type="radio"] {
+margin-right: 0.5rem;
+transform: scale(1.1);
+}
+
+input[type="range"] {
+width: 100%;
+max-width: 320px;
+vertical-align: middle;
+margin-right: 0.5rem;
+}
+
+textarea {
+resize: vertical;
+}
+
+/* ==========================================================================
+7. FOOTER SYSTEM
+========================================================================== */
+footer {
+background-color: var(--dark-blue);
+color: var(--white);
+text-align: center;
+padding: 2rem 1rem;
+margin-top: 5rem;
+border-top: 5px solid var(--bright-yellow);
+}
+
+footer p {
+color: var(--white);
+margin-bottom: 0;
+font-size: 0.95rem;
+opacity: 0.85;
+}
+
+iframe {
+width: 100%;
+max-width: 100%;
+border-radius: 6px;
+margin-top: 1rem;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+8. RESPONSIVE DESIGN BREAKPOINTS 
+========================================================================== */
+
+/*  Tablet Framework Breakpoint (max-width: 768px) */
+@media screen and (max-width: 768px) {
+html {
+font-size: 93.75%; /* Scales entire document sizing scale cleanly to 15px */
+}
+
+main {
+margin: 2rem auto;
+}
+
+section {
+padding: 1.75rem;
+margin-bottom: 1.75rem;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.75rem; }
+}
+
+/* Mobile Framework Breakpoint (max-width: 480px) */
+@media screen and (max-width: 480px) {
+html {
+font-size: 87.5%; /* Scales entire document text sizing cleanly to 14px */
+} 
+
+header {
+padding: 1.5rem 1rem;
+}
+
+header h1 {
+font-size: 1.75rem;
+}
+
+/* Fluid Navigation modification on small devices */
+nav {
+flex-direction: column;
+width: 100%;
+gap: 0.5rem;
+}
+
+nav a {
+width: 100%;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.04);
+padding: 0.6rem 0;
+}
+
+section {
+padding: 1.25rem;
+border-left-width: 4px;
+}
+
+/* Scale command touch targets to fill mobile viewport widths smoothly */
+button, .btn-link, strong a {
+width: 100%;
+text-align: center;
+}
+
+button[type="reset"] {
+margin-left: 0;
+margin-top: 0.75rem;
+}  
+
+section{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+} 
+ 
+}
+/* Map Layer Canvas Frame Layout */
+#map {
+    height: 380px;
+    width: 100%;
+    max-width: 650px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    margin: 1.2rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Validation System Visual Formatting */
+.error-message {
+    color: #d9534f;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+.success-box {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.loading-text {
+    color: var(--electric-blue);
+    font-style: italic;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
+
+/* ==========================================================================
+   9. SEARCH / INTERACTIVE FILTER SYSTEM COMPONENT SIZING
+   ========================================================================== */
+.filter-wrapper {
+    margin: 1.5rem 0;
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#serviceSearch {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+#serviceSearch:focus {
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 0 2px rgba(0, 162, 232, 0.2);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--light-bg);
+    color: var(--dark-blue);
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    background-color: #e5ebe9;
+}
+
+.filter-btn.active {
+    background-color: var(--electric-blue);
+    color: var(--white);
+    border-color: var(--electric-blue);
+}
+
+/* Make image triggers cursor-responsive */
+.lightbox-trigger {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.lightbox-trigger:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   10. MODAL LIGHTBOX DISPLAY LAYER FRAMEWORK
+   ========================================================================== */
+.lightbox-modal {
+    display: none; /* Controlled dynamically by JavaScript */
+    position: fixed;
+    z-index: 2000; /* Layers standard body elements safely */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 28, 58, 0.9); /* Styled tint match using --dark-blue token */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.lightbox-image-content {
+    max-width: 85%;
+    max-height: 75%;
+    border-radius: 4px;
+    border: 3px solid var(--white);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    animation: zoomEffect 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#lightboxCaption {
+    margin-top: 1rem;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    max-width: 80%;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.close-lightbox:hover {
+    color: var(--bright-yellow);
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Map Layer Canvas Frame Layout from Previous Turn */
+#map {
+    height: 380px;
+    width: 100%;
+    max-width: 650px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    margin: 1.2rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Validation System Visual Formatting */
+.error-message {
+    color: #d9534f;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+.success-box {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.loading-text {
+    color: var(--electric-blue);
+    font-style: italic;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
+
+/* ==========================================================================
+   11. FLUID MOBILE RESPONSIVENESS OVERRIDES (Max-Width: 480px)
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    /* Prevent the entire viewport from breaking sideways */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Tighter content margins so layout elements have breathing room */
+    main {
+        margin: 1rem auto !important;
+        padding: 0 0.25rem !important;
+    }
+
+    section {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Force all layout components to respect boundary walls */
+    * {
+        max-width: 100%;
+    }
+
+    /* Fluid Image Scaling: Overrides hardcoded pixel values cleanly */
+    img, .lightbox-trigger {
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important;
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+
+    /* Prevent text elements and titles from clipping */
+    h1 {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.4rem !important;
+    }
+
+    /* Wrap header links into clean rows if they run out of space */
+    nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    nav a {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Form Fields and Fieldsets optimization */
+    fieldset {
+        padding: 0.75rem !important;
+        margin: 0 0 1rem 0 !important;
+        box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 1rem !important; /* Prevents iOS auto-zoom on select input fields */
+    }
+
+    /* Align UI Filter button layout elements */
+    .filter-buttons {
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    .filter-btn {
+        width: 100%; /* Stacks filter controls for simple finger-tapping on mobile */
+        text-align: center;
+    }
+}
